@@ -17,6 +17,8 @@ const storage = multer.diskStorage({
   filename: function(req, file, cb) {
     const exttype = file.mimetype.split('/')[1];
     const filename = hashFilename(file.originalname) + '-' + Date.now() + '.' + exttype;
+    // const filename = hashFilename(file.name) + '-' + Date.now() + '.' + exttype; rado modified
+
     cb(null, filename);
   }
 })
